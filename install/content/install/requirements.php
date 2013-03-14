@@ -27,8 +27,8 @@ ensure that these tests also pass.</p>
         could restrict some functions.</p>
         <table class="table-striped preq-table">
             <tr>
-                <th>PHP-Version >= <?php echo $minphpver ?>:</th>
-                <td><span class="badge badge-<?php echo $r->get_phpversion_c() ?>"><?php echo $r->get_phpversion_n() ?></span></td>
+                <th width="90%">PHP-Version >= <?php echo $minphpver ?>:</th>
+                <td width="10%"><span class="badge badge-<?php echo $r->get_phpversion_c() ?>"><?php echo $r->get_phpversion_n() ?></span></td>
             </tr>
             <tr>
                 <th>
@@ -66,17 +66,5 @@ ensure that these tests also pass.</p>
             </tr>
         </table>
     </fieldset>
-    <fieldset>
-        <legend>Check of the <em>mbstring</em>-extension</legend>
-        <p class="text-error"><span class="label label-important">Required</span> <em>mbstring</em> is a php-extension which gives support for multibyte-strings.</p>
-        <table class="table-striped preq-table">
-            <tr>
-                <th>
-                    Function overloading:<br />
-                    <span class="badge badge-info">Info</span> <em>mbstring.func_overload has to be between 0 and 4.</em>
-                </th>
-                <td><span class="badge badge-<?php echo $r->get_mb_fo_c() ?>"><?php echo $r->get_mb_fo_n() ?></span></td>
-            </tr>
-        </table>
-    </fieldset>
 </form>
+<p class="text-center"><button class="btn btn-<?php echo $r->check_all("c") ?>" <?php if( $r->check_all('a') ): ?>onclick="nexttab(23);"<?php endif ?>><?php echo $r->check_all("n") ?></button></p>

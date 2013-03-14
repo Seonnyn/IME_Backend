@@ -13,7 +13,6 @@ class requirements {
     private $_auf;
     private $_gis;
     private $_utf_s;
-    private $_mbfo;
 
     public function __construct( $pmv = "1.0.0" ) {
         $this->_phpversion  = $this->get_phpversion($pmv);
@@ -143,26 +142,26 @@ class requirements {
         }
     }
 
-    private function get_mb_fo() {
-        if( function_exists( 'mbstring.func_overload') ) {
-            return true;
+    public function check_all( $w ) {
+        if( $this->_phpversion && $this->_rgs && $this->_auf && $this->_gis && $this->_utf_s) {
+            switch($w) {
+                case('c'):
+                    return "primary";
+                case('n'):
+                    return "Next Step";
+                case('a'):
+                    return true;
+            }
         } else {
-            return false;
+            switch($w) {
+                case('c'):
+                    return "danger";
+                case('n'):
+                    return "Update";
+                case('a'):
+                    return false;
+            }
         }
-    }
-
-    public function get_mb_fo_c() {
-        if( get_mb_fo() ) {
-            return "success";
-        } else {
-            return "important";
-        }
-    }
-    public function get_mb_fo_n() {
-        if( get_mb_fo() ) {
-            return "Yes";
-        } else {
-            return "No";
-        }
+        return false;
     }
 }

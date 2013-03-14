@@ -72,7 +72,7 @@ require_once("config.inc");
                                     <?php include "content/install/requirements.php" ?>
                                 </div>
                                 <div id="tab23" class="tab-pane">
-                                    <?php include "content/support.php" ?>
+                                    <?php include "content/install/database.php" ?>
                                 </div>
                             </div>
                         </div>
