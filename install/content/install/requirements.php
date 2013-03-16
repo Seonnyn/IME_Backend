@@ -7,7 +7,7 @@
  * Time: 16:49
  */
 
-require_once('./lib/php/functions.php');
+require_once('./config.inc');
 require_once('./lib/php/requirements.php');
 $r = new requirements($minphpver);
 ?>
@@ -67,4 +67,5 @@ ensure that these tests also pass.</p>
         </table>
     </fieldset>
 </form>
-<p class="text-center"><button class="btn btn-<?php echo $r->check_all("c") ?>" <?php if( $r->check_all('a') ): ?>onclick="nexttab(23);"<?php endif ?>><?php echo $r->check_all("n") ?></button></p>
+<div class="text-center"><button class="btn btn-info" onclick="prevtab(21);">Previous Step</button>
+<button class="btn btn-<?php echo $r->check_all("c") ?>" <?php if( $r->check_all('a') ): ?>onclick="nexttab(23);"<?php endif ?>><?php echo $r->check_all("n") ?></button></div>

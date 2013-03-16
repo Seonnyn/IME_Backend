@@ -23,7 +23,6 @@ require_once("config.inc");
             <h1>IME</h1>
         </div>
         <div class="span6">
-
         </div>
         <div class="span3">
             Installation Panel
@@ -34,7 +33,7 @@ require_once("config.inc");
             <div class="tabbable"> <!-- Only required for left/right tabs -->
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab1" data-toggle="tab">Overview</a></li>
-                    <li><a href="#tab2" data-toggle="tab">Installation</a></li>
+                    <li><a href="#tab2" onclick="tab_active = 21" data-toggle="tab">Installation</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab1">
@@ -60,9 +59,9 @@ require_once("config.inc");
                     <div class="tab-pane" id="tab2">
                         <div class="tabbable tabs-left">
                             <ul class="nav nav-tabs">
-                                <li id="li_tab21" class="active"><a href="#tab21" data-toggle="tab">Introduction</a></li>
-                                <li id="li_tab22"><a href="#tab22" data-toggle="tab">Requirements</a></li>
-                                <li id="li_tab23"><a href="#tab23" data-toggle="tab">Database Settings</a></li>
+                                <li id="li_tab21" class="active"><a href="#">Introduction</a></li>
+                                <li id="li_tab22" class="disabled"><a href="#">Requirements</a></li>
+                                <li id="li_tab23" class="disabled"><a href="#">Database Settings</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="tab21" class="tab-pane active">
