@@ -43,7 +43,7 @@ require_once("config.inc");
                                 <li><a href="#tab12" data-toggle="tab">License</a></li>
                                 <li><a href="#tab13" data-toggle="tab">Support</a></li>
                             </ul>
-                            <div class="tab-content">
+                            <div class="tab-content well">
                                 <div id="tab11" class="tab-pane active">
                                     <?php include "content/introduction.php" ?>
                                 </div>
@@ -62,8 +62,9 @@ require_once("config.inc");
                                 <li id="li_tab21" class="active"><a href="#">Introduction</a></li>
                                 <li id="li_tab22" class="disabled"><a href="#">Requirements</a></li>
                                 <li id="li_tab23" class="disabled"><a href="#">Database Settings</a></li>
+                                <li id="li_tab24" class="disabled"><a href="#">Checking Database</a></li>
                             </ul>
-                            <div class="tab-content">
+                            <div class="tab-content well">
                                 <div id="tab21" class="tab-pane active">
                                     <?php include "content/install/introduction.php" ?>
                                 </div>
@@ -72,6 +73,9 @@ require_once("config.inc");
                                 </div>
                                 <div id="tab23" class="tab-pane">
                                     <?php include "content/install/database.php" ?>
+                                </div>
+                                <div id="tab24" class="tab-pane">
+                                    <?php include "content/install/checkdatabase.php" ?>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +86,7 @@ require_once("config.inc");
     </div>
     <div class="row-fluid show-grid">
         <div class="span12">
-            &copy; 2013 Hans "Seonnyn" Rößler, powered by IME
+            &copy; 2013 Hans "Seonnyn" Rößler, powered by IME v<?php echo $imever ?>
         </div>
     </div>
 </div>
