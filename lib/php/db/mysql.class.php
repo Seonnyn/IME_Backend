@@ -7,9 +7,61 @@
  * Time: 15:05
  */
 
-class Lib_Php_Db_Mysql extends Lib_Php_Db_Dbhandle {
-    public function __construct() {
+class Lib_Php_Db_Mysql {
+    private $_dbhandle;
+    private $_db;
 
+    public function __construct( Lib_Php_Db_Dbhandle $dbhandle ) {
+        $this->_dbhandle = $dbhandle;
+    }
+
+    public function connect() {
+        try {
+            if( $this->_dbhandle->getDbPort() != '3306') {
+                $this->_db = mysql_connect( $this->_dbhandle->getDbHost().":".$this->_dbhandle->getDbPort(),
+                            $this->_dbhandle->getDbUser(),
+                            $this->_dbhandle->getDbPass()
+                );
+            } else {
+                $this->_db = mysql_connect( $this->_dbhandle->getDbHost(),
+                            $this->_dbhandle->getDbUser(),
+                            $this->_dbhandle->getDbPass()
+                );
+            }
+            if( !$this->_db ) {
+                throw new Exception( mysql_error() );
+            } else {
+                return true;
+            }
+        } catch ( Exception $e ) {
+            return $e;
+        }
+    }
+
+    public function select_database() {
+        try {
+            $this->_db = mysql_select_db( $this->_dbhandle->getDbDb() );
+            if ( !$this->_db ) {
+                throw new Exception( mysql_error() );
+            } else {
+                return true;
+            }
+        } catch ( Exception $e ) {
+            return $e;
+        }
+    }
+
+    public function query( $sql ) {
+        try {
+            $b = mysql_query( $sql );
+            if( !$b ) {
+                throw new Exception( mysql_error() );
+            } else {
+                return $b;
+            }
+        } catch ( Exception $e ) {
+            return $e;
+        }
     }
 }
 

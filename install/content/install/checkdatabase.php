@@ -6,12 +6,16 @@
  * Date: 16.03.13
  * Time: 16:18
  */
-
-$dbhandle = new Lib_Php_Db_Dbhandle("user","pass","db");
 ?>
 <form>
     <fieldset>
         <legend>Checking Database Settings</legend>
+        <table class="table-striped">
+            <tr>
+                <th id="db_connect_label"></th>
+                <td id="db_connect_check"></td>
+            </tr>
+        </table>
     </fieldset>
 </form>
 <div class="text-center"><button class="btn btn-info" onclick="prevtab(23);">Previous Step</button></div>
