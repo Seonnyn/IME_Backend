@@ -7,7 +7,7 @@
  * Time: 16:18
  */
 
-require_once( '../lib/php/db/dbhandle.class.php2' );
+$dbhandle = new Lib_Php_Db_Dbhandle("user","pass","db");
 ?>
 <form>
     <fieldset>

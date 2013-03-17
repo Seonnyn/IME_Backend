@@ -7,14 +7,14 @@
  * @version 0.0.1a
  */
 
-    session_name( 'ime_backend' );
+    session_name( 'ime_backend_install' );
     session_start( );
 
     if( !defined( 'SERVER_HOST' ) ) define( 'SERVER_HOST' , "http://".$_SERVER["HTTP_HOST"] );
 
     spl_autoload_register(function ($class) {
         $autoloader_folders = explode( '_' , $class );
-        $str = "";
+        $str = "../";
         $first = true;
         foreach ( $autoloader_folders as $f ) {
             if( $first ) {
@@ -26,5 +26,5 @@
         }
         $str .= '.class.php';
 
-        include $str;
+        include_once $str;
     });

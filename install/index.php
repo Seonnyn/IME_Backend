@@ -1,5 +1,6 @@
 <?php
 require_once("config.inc");
+require_once("autoloader.php");
 ?>
 <!DOCTYPE html>
 <html>

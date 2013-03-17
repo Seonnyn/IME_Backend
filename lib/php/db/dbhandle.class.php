@@ -7,7 +7,7 @@
  * Time: 16:37
  */
 
-class DbHandle {
+class Lib_Php_Db_Dbhandle {
     /**
      * @var string db_adap
      * Contains which DB Adapter is used
@@ -39,5 +39,29 @@ class DbHandle {
      * The database everything of this is in
      */
     private $_db_db;
+    /**
+     * @var Object db_handle
+     * Contains an Object of the needed Database Class
+     */
+    private $_db_handle;
+
+    /**
+     * @param string $user
+     * @param string $pass
+     * @param string $db
+     * @param string $adapter
+     * @param string $host
+     * @param string $port
+     */
+    public function __construct( $user, $pass, $db, $adapter = 'mysql', $host = 'localhost' , $port = '3306') {
+        $this->_db_adap = $adapter;
+        $this->_db_host = $host;
+        $this->_db_port = $port;
+        $this->_db_user = $user;
+        $this->_db_pass = $pass;
+        $this->_db_db   = $db;
+        $b = "Lib_Php_Db_".ucfirst( $adapter );
+        $this->_db_handle = new $b();
+    }
 }
 
