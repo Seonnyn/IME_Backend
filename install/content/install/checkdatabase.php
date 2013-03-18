@@ -10,10 +10,22 @@
 <form>
     <fieldset>
         <legend>Checking Database Settings</legend>
-        <table class="table-striped">
+        <table class="table-striped" width="100%">
             <tr>
-                <th id="db_connect_label"></th>
-                <td id="db_connect_check"></td>
+                <th id="db_connect_label" width="80%"></th>
+                <td id="db_connect_check" width="20%"></td>
+            </tr>
+            <tr>
+                <th id="db_table_label"></th>
+                <td id="db_table_check"></td>
+            </tr>
+            <tr>
+                <th id="db_example_label"></th>
+                <td id="db_example_check"></td>
+            </tr>
+            <tr>
+                <th id="db_test_label"></th>
+                <td id="db_test_check"></td>
             </tr>
         </table>
     </fieldset>

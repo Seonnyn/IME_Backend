@@ -70,12 +70,12 @@ class Lib_Php_Db_Dbhandle {
      */
     public function init_db() {
         $b = $this->_db_handle->connect();
-        if( !$b ) {
-            return $b;
+        if( $b != true ) {
+            return 'MYSQL_CONNECTION_ERROR';
         } else {
             $c = $this->_db_handle->select_database();
-            if( !$c ) {
-                return $c;
+            if( $c != true ) {
+                return 'MYSQL_DATABASE_ERROR';
             } else {
                 return true;
             }
@@ -83,6 +83,10 @@ class Lib_Php_Db_Dbhandle {
     }
 
     public function select( $table, $order_by = null, $where = null, $all = true ) {
+
+    }
+
+    public function createTable( $name, $attributes ) {
 
     }
 

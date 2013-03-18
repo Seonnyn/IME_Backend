@@ -7,7 +7,6 @@
  * Time: 15:28
  */
 
-error_reporting(0);
 require_once ( "../../../lib/php/db/dbhandle.class.php" );
 require_once ( "../../../lib/php/db/mysql.class.php" );
 
@@ -21,7 +20,7 @@ $dbhandle = new Lib_Php_Db_Dbhandle($user, $pass, $db, "mysql", $host, $port);
 
 $test = $dbhandle->init_db();
 
-if ( $test === true ) {
+if ( $test == true ) {
     echo "OK";
 } else {
     echo $test;

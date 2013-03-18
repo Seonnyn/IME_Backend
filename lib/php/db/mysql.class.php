@@ -29,7 +29,7 @@ class Lib_Php_Db_Mysql {
                 );
             }
             if( !$this->_db ) {
-                throw new Exception( mysql_error() );
+                throw new Exception( 'MYSQL_CONNECTION_ERROR' );
             } else {
                 return true;
             }
@@ -42,7 +42,7 @@ class Lib_Php_Db_Mysql {
         try {
             $this->_db = mysql_select_db( $this->_dbhandle->getDbDb() );
             if ( !$this->_db ) {
-                throw new Exception( mysql_error() );
+                throw new Exception( 'MYSQL_DATABASE_ERROR' );
             } else {
                 return true;
             }
@@ -55,7 +55,7 @@ class Lib_Php_Db_Mysql {
         try {
             $b = mysql_query( $sql );
             if( !$b ) {
-                throw new Exception( mysql_error() );
+                throw new Exception( 'MYSQL_QUERY_ERROR: '.$sql );
             } else {
                 return $b;
             }
